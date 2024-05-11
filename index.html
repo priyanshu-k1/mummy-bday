@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy birthday Mummy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://hips.hearstapps.com/hmg-prod/images/pink-heart-emoji-vector-illustration-royalty-free-illustration-1698694801.jpg?crop=1xw:1xh;center,top&resize=980:*" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1 class="ml9" align="center">
+            <span class="text-wrapper">
+              <span class="letters">HAPPY BIRTHDAY MUMMY</span>
+            </span>
+          </h1>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <div class="cardContainer">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+
+        </div>
+          
+          
+
+    </div>
+
+<script>
+    // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml9 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml9 .letter',
+            scale: [0, 1],
+            duration: 1500,
+            elasticity: 600,
+            delay: (el, i) => 45 * (i+1)
+        }).add({
+            targets: '.ml9',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+</script>   
+</body>
+</html>
